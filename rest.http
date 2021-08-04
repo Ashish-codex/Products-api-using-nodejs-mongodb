@@ -1,0 +1,84 @@
+GET http://localhost:5000/api
+
+
+
+### Registration Routes 
+
+###         Register
+POST  http://localhost:5000/api/register
+Content-Type: application/json
+
+{
+    "name": "ashish",
+    "email": "ashish16@gmail.com",
+    "password": "ashish1234",
+    "repeat_password": "ashish1234"
+}
+
+
+###         Login
+POST http://localhost:5000/api/login
+Content-Type: application/json
+
+{
+    "email": "ashish@gmail.com",
+    "password": "1234567"
+}
+
+
+###         Who m I
+GET http://localhost:5000/api/me
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTA3ZGEzOTNiNzkxZDMxMGNmZDg5NzYiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MjgwNTg4MzAsImV4cCI6MTY1OTYxNjQzMH0.6x6XktsRcEvCKMLpkkcel7cOGqu4PVueQ3G2VvRhQhc
+
+
+
+###         Logout
+POST http://localhost:5000/api/logout
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MTg5MDAwMTQsImV4cCI6MTYxODkwMDA0NCwiYXVkIjoiNjA3MTRmYzI3MTM0YTgxNTljN2M0YWM3IiwiaXNzIjoiaXRzYS5jb20ifQ.KbowgUQyA5LJi5i7ACTqpSnNO8O98k4gr7KgzZuMHKo
+Content-Type: application/json
+
+{
+    "refresh_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.
+    eyJfaWQiOiI2MGZlOTk1ZDM1OTk1YzIxM2MxZmFjZmMiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2Mj
+    czOTEwNTgsImV4cCI6MTY1ODk0ODY1OH0.gr1P1UwW5rIJ1PIpZlKbdKQyYeTPKo-YtnR3sVqtCH8"
+}
+
+
+###         Refresh-Token
+POST  http://localhost:5000/api/refresh
+Content-Type: application/json  
+
+{
+    "refresh_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.
+    eyJfaWQiOiI2MGZlOTk1ZDM1OTk1YzIxM2MxZmFjZmMiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2Mjc
+    zOTEwMzAsImV4cCI6MTY1ODk0ODYzMH0.Z6IcIwN9QmXM1IIlQ04dzw8hL1qvMmtehQYe6vAm4TY"
+}
+
+
+
+
+
+
+
+
+
+
+
+### Products Routes
+
+GET http://localhost:5000/api/products
+
+
+
+###
+GET http://localhost:5000/api/products/jskfjksjf
+
+
+### 
+GET http://localhost:5000/api/update-product
+
+
+### 
+GET http://localhost:5000/api/delete-product
+
+

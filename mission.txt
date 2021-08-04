@@ -1,0 +1,102 @@
+[+] Register a user
+    -> validate the request
+    -> autherise the request
+    -> check wheter the user is already egister
+    -> prepare a user model 
+    -> store into database
+    -> generate jwt accessToken and refreshToken. And store only refreshToken into database
+    -> send those tokens as response 
+
+
+
+[+] Login a user
+    -> validate the request
+    -> autherise the request
+    -> check wheter the user is register
+    -> generate jwt accessToken and refreshToken. And store only refreshToken into database
+    -> send those tokens as response 
+
+
+
+[+] Who am I : basicaly this is used as "plz tell me whom am i" means what is my identity,
+               after loging i m forgot my self but i have my token can u just verify it and tell me 
+    -> take that accessToken from request header as autherization and seperate it from bearer
+    -> after getting full token verify it using jwt.verify
+    -> extract id and role form verified token 
+    -> set those property as user object in request body
+    -> and now find this user object in mongodb using finone
+    -> finaly send the response
+
+    
+
+[+] Refresh the token : This route will take only refreshToken and  is used to provide two tokens i.e accessToken and refreshToken
+    -> validate the request using Joi
+    -> check wheter the token is already exists in database or not 
+    -> after getting full token verify it using jwt.verify
+    -> extract id form verified token
+    -> find the user into database using that id 
+    -> generate jwt accessToken and refreshToken. And store only refreshToken into database
+    -> send those tokens as response 
+
+
+
+[+] Logout the user: To logout this route will take two token i.e accessToken as request headers and
+                     refreshToken as json body. Using accessToken it verifies which user wants to logout and 
+                     using refreshToken it delets this refreshToken from database so that the user can't generates 
+                     the tokens again, because of this the user must has to loging again to access that routes
+    -> validate the request using Joi
+    -> take that accessToken from request header as autherization and verify it if the user is autherised or not
+    -> take that refreshToken from request body to find and delete from database using deleteone and delete it
+    
+
+
+[+] Add new product : this route will take two thing i.e accessToken from request headers as autherization
+                      and request body as multipart form data. First it will checks the accessToken wheter
+                      the requesting user are admin or not. Second the request body should pass in multer function
+                      as parameter in that function the request body gets validate if error occured then delete the 
+                      current image file that is selected.
+    -> apply middleware for autherization
+    -> getting file path in multer function
+    -> validate the request in multer function i.e handleFormData. if(error){then unlink the image file}
+    -> create a productDocument to add into database, in this productDocument add that file path as image field
+
+
+
+
+[+] Update a product: only admin can Update the products for that we have authenticate the request by verifying 
+                      the accessToken. From accessToken we can get the role of user and this logic is handeled 
+                      by the auth and admin middleware.
+    -> apply middleware for autherization
+    -> for now check if user has selected file or not. if(file){getting file path in multer function} 
+    -> validate the request in multer function i.e handleFormData. 
+    if(error){ 
+        if(file){
+            then unlink the image file
+        }
+    }
+    -> create a productDocument to add into database, 
+    file = ...(req.file && { image: filePath }) // means if file is select then olny add the file path i.e link
+    if(file){
+      in this productDocument add that file path as image field  
+    } 
+
+
+
+
+[+] Get all products
+[+] Get single product
+[+] Delete a product
+
+
+
+
+->How to run :  
+    In order to run the node projcet using esm (ECMAScript module).
+    Do the changes in package.json file -> "start": "nodemon -r esm app.js"
+    To run -> npm run start
+
+
+
+
+-> To get unique file name 
+const uniqueName = `${Date.now()}_${file.originalname}_${Math.round(Math.random() * 1E9)}${path.extname(file.originalname)}`
