@@ -4,7 +4,7 @@ import { jwt } from "../Config/import-config";
 class JwtService {
 
     // For Access token usage
-    static signToken(payload, secret = JWT_ACCESS_SECRET, expiry = '1y'){
+    static signToken(payload, secret = JWT_ACCESS_SECRET, expiry = '1h'){
         return jwt.sign(payload, secret, { expiresIn: expiry })
     }
 
