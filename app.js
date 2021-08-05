@@ -68,6 +68,6 @@ app.use(errorHandler)
 
 
 //Server listing on port
-app.listen(5000, () => {
+app.listen(APP_PORT, () => {
     console.log(`Listening on port ${APP_PORT}`);
 })
