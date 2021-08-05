@@ -43,12 +43,14 @@ db.once('open', () => {
 // console.table({accessSecret, refreshSecret})
 
 
-app.use('/', (req, res, next) => {
-    res.send('This product api')
-})
+
 
 //Routes starts with /api
 app.use('/api', router)
+
+app.use('/', (req, res, next) => {
+    res.send('This product api')
+})
 
 
 //Serving satict file i.e images
