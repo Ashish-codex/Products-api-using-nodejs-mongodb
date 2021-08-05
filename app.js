@@ -43,6 +43,9 @@ db.once('open', () => {
 // console.table({accessSecret, refreshSecret})
 
 
+app.use('/', (req, res, next) => {
+    res.send('This product api')
+})
 
 //Routes starts with /api
 app.use('/api', router)
@@ -63,6 +66,6 @@ app.use(errorHandler)
 
 
 //Server listing on port
-app.listen(APP_PORT, () => {
+app.listen(5000, () => {
     console.log(`Listening on port ${APP_PORT}`);
 })
