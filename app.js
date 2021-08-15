@@ -55,9 +55,9 @@ app.use('/api', router)
 app.use('/uploads', express.static('uploads'))
 
 
-// app.use('/', (req, res, next) => {
-//     res.send('This product api')
-// })
+app.use('/', (req, res, next) => {
+    res.send('This product api')
+})
 
 
 // If there is no route match 
