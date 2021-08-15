@@ -5,7 +5,7 @@ import errorHandler from './Middlewares/error-handler'
 import { urlencoded } from 'express'
 import crypto from 'crypto'
 const app = express()
-const port = process.env.APP_PORT
+
 
 
 global.appRoot = path.resolve(__dirname)
@@ -71,6 +71,6 @@ app.use(errorHandler)
 
 
 //Server listing on port
-app.listen(port, () => {
+app.listen(process.env.PORT || 5000, () => {
     console.log(`Listening on port ${APP_PORT}`);
 })
