@@ -5,6 +5,7 @@ import errorHandler from './Middlewares/error-handler'
 import { urlencoded } from 'express'
 import crypto from 'crypto'
 const app = express()
+const port = process.env.APP_PORT
 
 
 global.appRoot = path.resolve(__dirname)
@@ -48,13 +49,15 @@ db.once('open', () => {
 //Routes starts with /api
 app.use('/api', router)
 
-app.use('/', (req, res, next) => {
-    res.send('This product api')
-})
 
 
 //Serving satict file i.e images
 app.use('/uploads', express.static('uploads'))
+
+
+app.use('/', (req, res, next) => {
+    res.send('This product api')
+})
 
 
 // If there is no route match 
@@ -68,6 +71,6 @@ app.use(errorHandler)
 
 
 //Server listing on port
-app.listen(APP_PORT, () => {
+app.listen(port, () => {
     console.log(`Listening on port ${APP_PORT}`);
 })
