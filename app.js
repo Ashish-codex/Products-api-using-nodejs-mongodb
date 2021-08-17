@@ -46,14 +46,37 @@ db.once('open', () => {
 
 
 
+//Serving satict file i.e images
+app.use('/uploads', express.static('uploads'))
+
+
 //Routes starts with /api
 app.use('/api', router)
 
 
-
-//Serving satict file i.e images
-app.use('/uploads', express.static('uploads'))
-
+app.use('/books', (req, res, next) => {
+    res.json({
+        message: 'succefull',
+        books: [
+            {
+                name: 'hary porter',
+                part: "1st part"
+            },
+            {
+                name: 'hary porter',
+                part: "2st part"
+            },
+            {
+                name: 'hary porter',
+                part: "3st part"
+            },
+            {
+                name: 'hary porter',
+                part: "4t part"
+            }
+        ]
+    })
+})
 
 app.use('/', (req, res, next) => {
     res.send('This product api')
