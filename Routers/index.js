@@ -28,29 +28,6 @@ router.get('/products', productController.getAllProduct)
 router.get('/products/:id', productController.getSingleProduct)
 
 
-router.get('/notebook',(req, res, next) => {
-    res.json({
-        message: 'succefull',
-        books: [
-            {
-                name: 'hary porter',
-                part: "1st part"
-            },
-            {
-                name: 'hary porter',
-                part: "2st part"
-            },
-            {
-                name: 'hary porter',
-                part: "3st part"
-            },
-            {
-                name: 'hary porter',
-                part: "4t part"
-            }
-        ]
-    })
-})
 
 
 

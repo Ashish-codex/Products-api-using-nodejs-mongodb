@@ -46,15 +46,14 @@ db.once('open', () => {
 
 
 
-//Serving satict file i.e images
-app.use('/uploads', express.static('uploads'))
-
-
 //Routes starts with /api
 app.use('/api', router)
 
 
-app.use('/books', router)
+
+//Serving satict file i.e images
+app.use('/uploads', express.static('uploads'))
+
 
 app.use('/', (req, res, next) => {
     res.send('This product api')
