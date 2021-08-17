@@ -166,27 +166,53 @@ const productController = {
 
 
     async getAllProduct(req, res, next){
-        try {
-            const products = await Product.find().select('-updatedAt -__v').sort({_id: -1})
-            if(products.length === 0){
-                return res.json({
-                    status: 404,
-                    message: 'there is no products availabe',
-                    products
-                })
-            }
+        // try {
+        //     const products = await Product.find().select('-updatedAt -__v').sort({_id: -1})
+        //     if(products.length === 0){
+        //         return res.json({
+        //             status: 404,
+        //             message: 'there is no products availabe',
+        //             products
+        //         })
+        //     }
             
-            res.status(200).json({
-                status: 200,
-                message: 'getting list of products',
-                size: products.length,
-                products
-            })
-            
-            next()
-        } catch (error) {
-            return next(error)
+        //     res.status(200).json({
+        //         status: 200,
+        //         message: 'getting list of products',
+        //         size: products.length,
+        //         products
+        //     })
+
+        //     next()
+        // } catch (error) {
+        //     return next(error)
+        // }
+
+
+
+        res.json({
+            message: 'succefull',
+            books: [
+                {
+                    name: 'hary porter',
+                    part: "1st part"
+                },
+                {
+                    name: 'hary porter',
+                    part: "2st part"
+                },
+                {
+                    name: 'hary porter',
+                    part: "3st part"
+                },
+                {
+                    name: 'hary porter',
+                    part: "4t part"
+                }
+            ]
         }
+
+
     },
 
 
