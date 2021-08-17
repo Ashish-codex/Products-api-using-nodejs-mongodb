@@ -183,6 +183,7 @@ const productController = {
                 products
             })
             
+            next()
         } catch (error) {
             return next(error)
         }
