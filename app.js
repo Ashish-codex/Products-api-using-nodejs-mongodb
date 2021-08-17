@@ -54,29 +54,7 @@ app.use('/uploads', express.static('uploads'))
 app.use('/api', router)
 
 
-app.use('/books', (req, res, next) => {
-    res.json({
-        message: 'succefull',
-        books: [
-            {
-                name: 'hary porter',
-                part: "1st part"
-            },
-            {
-                name: 'hary porter',
-                part: "2st part"
-            },
-            {
-                name: 'hary porter',
-                part: "3st part"
-            },
-            {
-                name: 'hary porter',
-                part: "4t part"
-            }
-        ]
-    })
-})
+app.use('/books', router)
 
 app.use('/', (req, res, next) => {
     res.send('This product api')
