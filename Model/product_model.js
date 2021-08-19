@@ -1,4 +1,4 @@
-import { APP_URL } from "../Config/dotenv-config";
+import { APP_URL,  HOST_URL } from "../Config/dotenv-config";
 import { mongoose } from "../Config/import-config";
 
 const Schema = mongoose.Schema
