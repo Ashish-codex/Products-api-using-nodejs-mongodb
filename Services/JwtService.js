@@ -14,7 +14,7 @@ class JwtService {
 
 
     // For Refresh token usage
-    static signRefreshToken(payload, secret = JWT_REFRESH_SECRET, expiry = '24h'){
+    static signRefreshToken(payload, secret = JWT_REFRESH_SECRET, expiry = '1y'){
         return jwt.sign(payload, secret, { expiresIn: expiry })
     }
 
