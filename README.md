@@ -110,11 +110,9 @@ npm run start
 ```
 
 
-### API Url
-``` JSON
+### Api Url
 https://product-node-rest-api.herokuapp.com/api/products
 
-```
 
 
 
