@@ -110,6 +110,11 @@ npm run start
 ```
 
 
+### Api Url
+https://product-node-rest-api.herokuapp.com/api/products
+
+
+
 
 ## Refrence :
 https://www.youtube.com/watch?v=iM8h8-LcJPk
