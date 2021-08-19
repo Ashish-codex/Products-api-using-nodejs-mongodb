@@ -10,5 +10,6 @@ export const {
     DB_PASSWORD,
     JWT_ACCESS_SECRET,
     JWT_REFRESH_SECRET,
-    APP_URL
+    APP_URL,
+    HOST_URL
 } = process.env
