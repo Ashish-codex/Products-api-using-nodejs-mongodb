@@ -1,4 +1,4 @@
-GET http://localhost:5000/api
+GET http://localhost:5000
 
 
 
@@ -64,7 +64,7 @@ Content-Type: application/json
 
 
 
-### Products Routes
+### Products Routes like create products, update products, delete products etc.
 
 GET http://localhost:5000/api/products
 
@@ -72,13 +72,38 @@ GET http://localhost:5000/api/products
 
 ###
 GET http://localhost:5000/api/products/jskfjksjf
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MTg5MDAwMTQsImV4cCI6MTYxODkwMDA0NCwiYXVkIjoiNjA3MTRmYzI3MTM0YTgxNTljN2M0YWM3IiwiaXNzIjoiaXRzYS5jb20ifQ.KbowgUQyA5LJi5i7ACTqpSnNO8O98k4gr7KgzZuMHKo
+
+
+
+###
+POST http://localhost:5000/api/products
+Content-Type: application/json
+
+{
+      "name": "boAt Rockerz 450 Bluetooth Headse",
+      "description": "With Mic:Yes\nConnector type: 3.5 mm\nBattery life: 15 hr | Charging time: 3 Hours\n40mm Drivers: HD Sound\nAdjustable Earcups",
+      "price": "₹1,099",
+      "image": "http://localhost:5000/uploads\\boat-rockerz-450-.jpeg-1627909665378-.jpeg",
+}
+
+
 
 
 ### 
-GET http://localhost:5000/api/update-product
+PUT  http://localhost:5000/api/products/61000602ed02611f1c60ea99
+Content-Type: application/json
+
+{
+      "name": "boAt Rockerz 450 Bluetooth Headse",
+      "description": "With Mic:Yes\nConnector type: 3.5 mm\nBattery life: 15 hr | Charging time: 3 Hours\n40mm Drivers: HD Sound\nAdjustable Earcups",
+      "price": "₹1,099",
+      "image": "http://localhost:5000/uploads\\boat-rockerz-450-.jpeg-1627909665378-.jpeg",
+}
+
 
 
 ### 
-GET http://localhost:5000/api/delete-product
-
+DELETE  http://localhost:5000/api/products/6107edcfad1b993520c3a000
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MTg5MDAwMTQsImV4cCI6MTYxODkwMDA0NCwiYXVkIjoiNjA3MTRmYzI3MTM0YTgxNTljN2M0YWM3IiwiaXNzIjoiaXRzYS5jb20ifQ.KbowgUQyA5LJi5i7ACTqpSnNO8O98k4gr7KgzZuMHKo
 
