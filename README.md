@@ -10,8 +10,12 @@ This api also provides the list of products as shown in below. Basically this ap
 2. Products: To access the products i have used different http methods like GET, POST, PUT, DELETE
 
 
+### System Architecture:
+https://whimsical.com/product-api-X3KQfx7wwS6PDV5jMHkVed
 
-### API Routes:
+
+
+### Api Routes:
 - Register a user
 - Login a user
 - Who am I
@@ -22,6 +26,7 @@ This api also provides the list of products as shown in below. Basically this ap
 - Get all products 
 - Get single product
 - Delete a product
+
 
 
 
@@ -108,6 +113,7 @@ npm install
 npm run start
 
 ```
+
 
 
 ### Api Url
