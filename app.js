@@ -50,15 +50,10 @@ db.once('open', () => {
 app.use('/api', router)
 
 
-
 //Serving satict file i.e images
 app.use('/uploads', express.static('uploads'))
 
 
-
-app.use('/', (req, res, next) => {
-    res.send('This product api')
-})
 
 
 // If there is no route match 
@@ -69,6 +64,7 @@ app.use( (req, res, next) => {
 
 //Error handaling middleware
 app.use(errorHandler) 
+
 
 
 //Server listing on port

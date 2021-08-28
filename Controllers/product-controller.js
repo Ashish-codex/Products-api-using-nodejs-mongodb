@@ -132,10 +132,10 @@ const productController = {
 
         try {
             const isProductExist = await Product.exists({_id: req.params.id})
-            console.log(isProductExist)
+            // console.log(isProductExist)
             if(isProductExist){
                 const productDocument = await Product.findOneAndRemove({_id: req.params.id})
-                console.log(productDocument)
+                // console.log(productDocument)
 
 
                 const filePath = productDocument._doc.image
