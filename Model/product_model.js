@@ -9,7 +9,7 @@ const productSchema = Schema({
     description: { type: String, required: true },
     price: { type: String, required: true },
     image: {type: String, required: true, get: (image) => {
-        return `${APP_URL}/${image}`
+        return `${HOST_URL}/${image}`
     }}
 
 }, { timestamps: true, toJSON: { getters: true }, id: false })
